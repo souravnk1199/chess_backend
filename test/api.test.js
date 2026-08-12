@@ -9,6 +9,13 @@ describe("chess API", () => {
     expect(response.body).toEqual({ status: "ok" });
   });
 
+  test("GET /api/openapi.json returns swagger document", async () => {
+    const response = await request(app).get("/api/openapi.json");
+    expect(response.status).toBe(200);
+    expect(response.body.openapi).toBe("3.0.3");
+    expect(response.body.paths["/api/ai-move"].post).toBeTruthy();
+  });
+
   test("POST /api/ai-move returns a legal move", async () => {
     const fen = "rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq - 0 1";
     const response = await request(app)

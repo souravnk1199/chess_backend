@@ -17,7 +17,8 @@
     "chess.js": "^1.4.0",
     "cors": "^2.8.6",
     "express": "^5.2.1",
-    "firebase-functions": "^7.3.2"
+    "firebase-functions": "^7.3.2",
+    "swagger-ui-express": "^5.0.1"
   },
   "devDependencies": {
     "jest": "^30.4.2",
